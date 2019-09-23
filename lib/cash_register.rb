@@ -13,6 +13,7 @@
      @items << title
      end
    end
+
  def apply_discount
    if @discount != 0
      @total -= @discount * 10
@@ -21,8 +22,10 @@
      "There is no discount to apply."
    end
  end
+
  def items
    @@items
  end
-end
+
+
 end
