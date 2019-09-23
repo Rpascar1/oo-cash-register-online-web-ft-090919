@@ -6,21 +6,16 @@ class CashRegister
   def initialize(employee_discount = nil)
     @total = 0
     @discount = employee_discount
-    @@items = []
+    @items = []
   end  
   
-  def add_item(item, price, quantity = 1)
-  @total = @total + (price * quantity)
-  if quantity > 1
-    counter = 0
-    while counter < quantity
-      @@items << item
-      counter += 1
+  def add_item(title, price, quantity = 1)
+    @old_total = @total
+    @total += (price * quantity)
+    quantity.times do
+    @items << title
     end
-  else
-    @@items << item
   end
-end
   
   def apply_discount
     if discount != nil
@@ -32,7 +27,7 @@ end
  end
 
   def items
-    @@items
+    @items
   end  
 
   def void_last_transaction
