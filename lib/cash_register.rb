@@ -10,7 +10,7 @@
      @old_total = @total
      @total += (price * quantity)
      quantity.times do
-     @items << title
+     @@items << title
      end
    end
  def apply_discount
